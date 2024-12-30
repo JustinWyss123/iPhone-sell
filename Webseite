@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Wissenstipps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+        }
+
+        .burger-menu div {
+            background-color: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 200px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #555;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        nav ul ul {
+            display: none;
+            padding-left: 20px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: flex;
+            }
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>iPhone Wissenstipps</h1>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Wissen</a></li>
+            <li>
+                <a href="#">iPhones</a>
+                <ul>
+                    <li><a href="#">iPhone 14</a></li>
+                    <li><a href="#">iPhone 13</a></li>
+                    <li><a href="#">iPhone 12</a></li>
+                    <li><a href="#">iPhone 11</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>Willkommen zu den iPhone Wissenstipps!</h2>
+        <p>Hier findest du hilfreiche Tipps und Tricks, um dein iPhone besser zu nutzen:</p>
+        <ul>
+            <li>Verwende Widgets, um deinen Home-Bildschirm individuell zu gestalten.</li>
+            <li>Aktiviere die Batterieanzeige, um den Akkustand genauer zu sehen.</li>
+            <li>Nutze die "Nicht stören"-Funktion für ungestörte Zeiten.</li>
+            <li>Sichere regelmäßig deine Daten mit iCloud oder einem Computer-Backup.</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
