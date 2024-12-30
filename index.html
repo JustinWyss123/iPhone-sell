@@ -18,7 +18,7 @@
             position: fixed; /* Fixiert am oberen Rand */
             top: 0;
             left: 0;
-            z-index: 1000; /* Überlappt andere Elemente */
+            z-index: 1000; /* Höchste Priorität für Klickbarkeit */
         }
 
         main {
@@ -28,7 +28,10 @@
     </style>
 </head>
 <body>
+    <!-- Fixiertes iframe für die Navigation -->
     <iframe src="navigation.html"></iframe>
+
+    <!-- Hauptinhalt -->
     <main>
         <h1>Willkommen</h1>
         <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
