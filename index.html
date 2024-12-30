@@ -36,6 +36,27 @@
             transform: translateX(0);
         }
 
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #sidebar ul li {
+            border-bottom: 1px solid #555;
+        }
+
+        #sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 15px;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #555;
+        }
+
         main {
             flex-grow: 1;
             overflow-y: auto;
@@ -51,7 +72,7 @@
     <nav id="sidebar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="kategorie2.html">iPhone Resell Preise</a></li>
+            <li><a href="iPhone-Resell-Preise.html">iPhone Resell Preise</a></li>
             <li class="has-submenu">
                 <a href="#">Navigation 3</a>
                 <ul class="dropdown">
