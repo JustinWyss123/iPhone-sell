@@ -15,18 +15,19 @@
 
         /* Header */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #333; /* Hintergrundfarbe */
+            color: #fff; /* Textfarbe */
             height: 60px; /* Höhe des Headers */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px; /* Platz auf beiden Seiten */
+            display: flex; /* Flexbox für Ausrichtung */
+            align-items: center; /* Vertikale Zentrierung */
+            justify-content: space-between; /* Abstand zwischen den Elementen */
+            padding: 0 20px; /* Innenabstand */
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* Volle Breite */
-            z-index: 1000;
+            width: 100%; /* Breite über die gesamte Seite */
+            z-index: 1000; /* Überlappt andere Elemente */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
         }
 
         .menu-toggle {
@@ -36,7 +37,9 @@
 
         h1 {
             margin: 0;
-            font-size: 20px; /* Größe des Titels */
+            font-size: 18px; /* Textgröße */
+            text-align: right; /* Nach rechts ausgerichtet */
+            flex-grow: 1; /* Nimmt den freien Platz ein */
         }
 
         /* Sidebar */
@@ -45,15 +48,16 @@
             top: 60px; /* Direkt unter dem Header */
             left: 0;
             background-color: #444;
-            width: 250px;
-            height: 100%;
+            width: 250px; /* Breite der Sidebar */
+            height: 100%; /* Füllt die gesamte Höhe */
             transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
+            transition: transform 0.3s ease; /* Animiertes Öffnen/Schließen */
+            overflow-y: auto; /* Scrollbar bei Überlauf */
+            z-index: 999; /* Liegt unter dem Header */
         }
 
         nav.open {
-            transform: translateX(0); /* Sidebar sichtbar */
+            transform: translateX(0); /* Zeigt die Sidebar */
         }
 
         nav ul {
@@ -67,37 +71,36 @@
         }
 
         nav ul li a {
-            text-decoration: none;
-            color: #fff;
+            text-decoration: none; /* Kein Unterstrich bei Links */
+            color: #fff; /* Textfarbe */
             display: block;
-            padding: 15px;
+            padding: 15px; /* Innenabstand */
         }
 
         nav ul li a:hover {
-            background-color: #555;
+            background-color: #555; /* Hover-Effekt */
         }
 
         /* Dropdown Styles */
         .dropdown {
-            display: none;
-            background-color: #555;
+            display: none; /* Dropdown-Elemente sind versteckt */
         }
 
         .dropdown a {
-            padding-left: 30px;
+            padding-left: 30px; /* Einzug für Untermenüs */
         }
 
         .dropdown a:hover {
-            background-color: #666;
+            background-color: #666; /* Hover-Effekt für Dropdown */
         }
 
         .has-submenu:hover .dropdown {
-            display: block;
+            display: block; /* Zeigt Dropdowns bei Hover */
         }
 
         /* Hauptinhalt */
         main {
-            margin-top: 60px; /* Platz für den Header */
+            margin-top: 60px; /* Platz für den fixierten Header */
             padding: 20px;
         }
     </style>
