@@ -25,10 +25,15 @@
             z-index: 1000;
         }
 
+        header .menu-title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
         .menu-toggle {
             font-size: 24px;
             cursor: pointer;
-            margin-right: 10px;
+            margin-right: 15px;
         }
 
         nav {
@@ -82,14 +87,14 @@
         }
 
         main {
-            margin-top: 60px; /* Offset for the fixed header */
+            margin-top: 60px; /* Platz für den fixierten Header */
         }
     </style>
 </head>
 <body>
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div>iPhone Tipps</div>
+        <div class="menu-title">iPhone Tipps</div>
     </header>
     <nav id="sidebar">
         <ul>
@@ -109,7 +114,8 @@
     </nav>
 
     <main>
-        <p>Hier können Sie den Inhalt der Seite einfügen.</p>
+        <h1>Willkommen</h1>
+        <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
     </main>
 
     <script>
