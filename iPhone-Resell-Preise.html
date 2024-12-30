@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Resell Preise</title>
     <style>
-        /* Grundlegendes Layout */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,7 +13,6 @@
             flex-direction: column;
         }
 
-        /* Header */
         header {
             background-color: #333;
             color: #fff;
@@ -42,13 +40,12 @@
             margin: 0;
         }
 
-        /* Sidebar */
         #sidebar {
             background-color: #444;
             width: 250px;
             height: 100vh;
             position: fixed;
-            top: 50px; /* Direkt unter dem Header */
+            top: 50px;
             left: -250px;
             transition: left 0.3s ease;
             overflow-y: auto;
@@ -91,22 +88,22 @@
             padding-left: 30px;
         }
 
-        /* Hauptinhalt */
         main {
-            margin-top: 50px; /* Platz für den Header */
+            margin-top: 50px;
             padding: 20px;
             flex-grow: 1;
             transition: margin-left 0.3s ease;
         }
 
         main.shifted {
-            margin-left: 250px; /* Platz für die geöffnete Sidebar */
+            margin-left: 250px;
         }
 
         table {
             width: 100%;
+            max-width: 600px; /* Maximale Breite der Tabelle */
+            margin: 20px auto; /* Zentrierung */
             border-collapse: collapse;
-            margin-top: 20px;
         }
 
         table th, table td {
@@ -119,16 +116,62 @@
             background-color: #333;
             color: #fff;
         }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 200px;
+            }
+
+            main.shifted {
+                margin-left: 200px;
+            }
+
+            .header-title {
+                font-size: 16px;
+            }
+
+            .menu-toggle {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 14px; /* Kleinere Schriftgröße für Tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            #sidebar {
+                width: 180px;
+            }
+
+            main.shifted {
+                margin-left: 180px;
+            }
+
+            .header-title {
+                font-size: 14px;
+            }
+
+            .menu-toggle {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            table {
+                font-size: 12px; /* Kleinere Schriftgröße für Smartphones */
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <h1 class="header-title">iPhone Tipps</h1>
     </header>
 
-    <!-- Sidebar -->
     <nav id="sidebar">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -146,7 +189,6 @@
         </ul>
     </nav>
 
-    <!-- Hauptinhalt -->
     <main id="main-content">
         <h1>iPhone Resell Preise</h1>
         <table>
@@ -194,7 +236,7 @@
         }
 
         function toggleDropdown(event) {
-            event.preventDefault(); // Verhindert das Standardverhalten des Links
+            event.preventDefault();
             const dropdown = document.getElementById('dropdown-menu');
             dropdown.classList.toggle('open');
         }
