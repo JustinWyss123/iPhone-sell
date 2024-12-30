@@ -11,15 +11,35 @@
             padding: 0;
         }
 
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         nav {
-            background-color: #444;
-            width: 250px;
-            height: 100%;
             position: fixed;
             top: 0;
             left: 0;
+            background-color: #444;
+            width: 250px;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
             overflow-y: auto;
-            color: #fff;
+            z-index: 1000;
+        }
+
+        nav.open {
+            transform: translateX(0);
         }
 
         nav ul {
@@ -43,13 +63,13 @@
             background-color: #555;
         }
 
+        /* Dropdown Styles */
         .dropdown {
             display: none;
         }
 
         .has-submenu:hover .dropdown {
             display: block;
-            background-color: #555;
         }
 
         .dropdown a {
@@ -58,7 +78,10 @@
     </style>
 </head>
 <body>
-    <nav>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+    <nav id="sidebar">
         <ul>
             <li><a href="index.html" target="content">Home</a></li>
             <li><a href="kategorie2.html" target="content">iPhone Resell Preise</a></li>
@@ -74,5 +97,12 @@
             </li>
         </ul>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
