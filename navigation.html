@@ -17,14 +17,14 @@
         header {
             background-color: #333;
             color: #fff;
-            height: 150px; /* Höhe des Headers */
+            height: 60px; /* Höhe bleibt wie gewünscht */
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw; /* Füllt die gesamte Bildschirmbreite */
+            width: 100%; /* Breite über die gesamte Seite */
             z-index: 1000;
             padding: 0 15px;
         }
@@ -32,8 +32,7 @@
         header .menu-title {
             flex-grow: 1;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 18px; /* Standard Textgröße für den Titel */
         }
 
         .menu-toggle {
@@ -95,7 +94,7 @@
 
         /* Hauptinhalt */
         main {
-            margin-top: 150px; /* Platz für den Header */
+            margin-top: 60px; /* Platz für den Header */
             padding: 20px;
         }
     </style>
