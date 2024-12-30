@@ -18,7 +18,7 @@
             height: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Zentriert den Titel horizontal */
             padding: 0 20px;
             width: 100%;
             position: fixed;
@@ -30,6 +30,8 @@
         .menu-toggle {
             font-size: 24px;
             cursor: pointer;
+            position: absolute; /* Macht den Button unabhängig vom zentralen Layout */
+            left: 20px; /* Positioniert den Button links */
         }
 
         .header-title {
