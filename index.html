@@ -18,8 +18,7 @@
             position: fixed; /* Fixiert am oberen Rand */
             top: 0;
             left: 0;
-            z-index: 1000; /* Höhere Priorität */
-            pointer-events: auto; /* Ermöglicht Interaktionen */
+            z-index: 1000; /* Höhere Priorität für Klicks */
         }
 
         main {
@@ -30,12 +29,24 @@
 </head>
 <body>
     <!-- Navigation -->
-    <iframe src="navigation.html" scrolling="no" id="navigation-frame"></iframe>
+    <iframe src="navigation.html" id="navigation-frame"></iframe>
 
     <!-- Hauptinhalt -->
     <main>
         <h1>Willkommen</h1>
         <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
     </main>
+
+    <script>
+        // Event Listener, um Nachrichten aus dem iframe zu empfangen
+        window.addEventListener('message', (event) => {
+            if (event.data === 'toggleSidebar') {
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.classList.toggle('open');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
