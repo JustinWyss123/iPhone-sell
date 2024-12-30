@@ -15,88 +15,90 @@
 
         /* Header */
         header {
-            background-color: #333; /* Hintergrundfarbe */
-            color: #fff; /* Textfarbe */
-            padding: 15px; /* Innenabstand */
-            display: flex; /* Flexbox für Ausrichtung */
-            align-items: center; /* Zentrierung vertikal */
-            justify-content: space-between; /* Platz zwischen den Elementen */
-            width: 100%; /* Füllt die gesamte Breite aus */
-            position: fixed; /* Fixiert am oberen Rand */
-            top: 0; /* Startet am oberen Rand */
-            z-index: 1000; /* Überlappt andere Elemente */
+            background-color: #333;
+            color: #fff;
+            height: 60px; /* Höhe des Headers */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px; /* Platz auf beiden Seiten */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Volle Breite */
+            z-index: 1000;
         }
 
         .menu-toggle {
             font-size: 24px; /* Größe der drei Striche */
-            cursor: pointer; /* Zeigt Hand-Symbol beim Hovern */
+            cursor: pointer;
         }
 
         h1 {
-            margin: 0; /* Kein zusätzlicher Abstand */
+            margin: 0;
             font-size: 20px; /* Größe des Titels */
         }
 
         /* Sidebar */
         nav {
-            position: absolute; /* Position relativ zum Header */
-            top: 60px; /* Unterhalb des Headers */
-            left: 0; /* Startet am linken Rand */
-            background-color: #444; /* Hintergrundfarbe der Sidebar */
-            width: 250px; /* Breite der Sidebar */
-            height: 100%; /* Füllt die gesamte Höhe */
-            transform: translateX(-100%); /* Versteckt die Sidebar */
-            transition: transform 0.3s ease; /* Animation beim Öffnen/Schließen */
-            overflow-y: auto; /* Scrollbar bei Überlauf */
+            position: absolute;
+            top: 60px; /* Direkt unter dem Header */
+            left: 0;
+            background-color: #444;
+            width: 250px;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
         }
 
         nav.open {
-            transform: translateX(0); /* Zeigt die Sidebar */
+            transform: translateX(0); /* Sidebar sichtbar */
         }
 
         nav ul {
-            list-style: none; /* Entfernt Punkte von Listen */
-            padding: 0; /* Kein Innenabstand */
-            margin: 0; /* Kein Außenabstand */
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         nav ul li {
-            border-bottom: 1px solid #555; /* Trennlinie zwischen Einträgen */
+            border-bottom: 1px solid #555;
         }
 
         nav ul li a {
-            text-decoration: none; /* Kein Unterstrich bei Links */
-            color: #fff; /* Textfarbe der Links */
-            display: block; /* Macht Links zu Blockelementen */
-            padding: 15px; /* Innenabstand */
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 15px;
         }
 
         nav ul li a:hover {
-            background-color: #555; /* Hover-Effekt */
+            background-color: #555;
         }
 
         /* Dropdown Styles */
         .dropdown {
-            display: none; /* Versteckt Dropdown-Elemente */
-            background-color: #555; /* Hintergrundfarbe des Dropdowns */
+            display: none;
+            background-color: #555;
         }
 
         .dropdown a {
-            padding-left: 30px; /* Einzug für Untermenüs */
+            padding-left: 30px;
         }
 
         .dropdown a:hover {
-            background-color: #666; /* Hover-Effekt für Untermenüs */
+            background-color: #666;
         }
 
         .has-submenu:hover .dropdown {
-            display: block; /* Zeigt Dropdowns bei Hover */
+            display: block;
         }
 
         /* Hauptinhalt */
         main {
-            margin-top: 60px; /* Platz für den fixierten Header */
-            padding: 20px; /* Innenabstand */
+            margin-top: 60px; /* Platz für den Header */
+            padding: 20px;
         }
     </style>
 </head>
