@@ -3,66 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Wissenstipps 2024</title>
+    <title>iPhone Wissenstipps</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
 
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: #333;
             color: #fff;
             padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        header h1 {
-            margin: 0;
-        }
-
-        .burger-menu {
-            display: none;
+        .menu-toggle {
+            font-size: 24px;
             cursor: pointer;
-            flex-direction: column;
-        }
-
-        .burger-menu div {
-            background-color: #fff;
-            height: 3px;
-            width: 25px;
-            margin: 4px 0;
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
             background-color: #444;
-            color: #fff;
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 200px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            padding-top: 60px;
         }
 
         nav ul {
             list-style: none;
-            margin: 0;
             padding: 0;
         }
 
         nav ul li {
-            padding: 10px 20px;
-            border-bottom: 1px solid #555;
+            margin: 10px 0;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            padding: 10px 20px;
             display: block;
         }
 
@@ -70,73 +57,45 @@
             background-color: #555;
         }
 
-        nav ul ul {
-            display: none;
-            padding-left: 20px;
+        .nav-open {
+            left: 0;
         }
 
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        .content {
+        .main-content {
             padding: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: flex;
-            }
-        }
-
-        .active {
-            display: block;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>iPhone Wissenstipps</h1>
-        <div class="burger-menu" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+<header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <h1>iPhone Wissenstipps</h1>
+</header>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Wissen</a></li>
-            <li>
-                <a href="#">iPhones</a>
-                <ul>
-                    <li><a href="#">iPhone 14</a></li>
-                    <li><a href="#">iPhone 13</a></li>
-                    <li><a href="#">iPhone 12</a></li>
-                    <li><a href="#">iPhone 11</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Kontakt</a></li>
-        </ul>
-    </nav>
+<nav id="nav">
+    <ul>
+        <li><a href="seite1.html" target="_blank">Navigation 1</a></li>
+        <li><a href="seite2.html" target="_blank">Navigation 2</a></li>
+        <li><a href="seite3.html" target="_blank">Navigation 3</a></li>
+        <li><a href="seite4.html" target="_blank">Navigation 4</a></li>
+    </ul>
+</nav>
 
-    <div class="content">
-        <h2>Willkommen zu den iPhone Wissenstipps!</h2>
-        <p>Hier findest du hilfreiche Tipps und Tricks, um dein iPhone besser zu nutzen:</p>
-        <ul>
-            <li>Verwende Widgets, um deinen Home-Bildschirm individuell zu gestalten.</li>
-            <li>Aktiviere die Batterieanzeige, um den Akkustand genauer zu sehen.</li>
-            <li>Nutze die "Nicht stören"-Funktion für ungestörte Zeiten.</li>
-            <li>Sichere regelmäßig deine Daten mit iCloud oder einem Computer-Backup.</li>
-        </ul>
-    </div>
+<div class="main-content">
+    <h2>Willkommen zu den Wissenstipps für iPhones!</h2>
+    <p>Hier finden Sie nützliche Tipps und Tricks zur Verwendung Ihres iPhones:</p>
+    <ul>
+        <li>Wie man den Akkuverbrauch reduziert.</li>
+        <li>Effizientes Arbeiten mit Widgets.</li>
+        <li>Tipps für die iPhone-Kamera.</li>
+    </ul>
+</div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('nav-open');
+    }
+</script>
 </body>
 </html>
