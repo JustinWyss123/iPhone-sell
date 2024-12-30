@@ -12,13 +12,13 @@
         }
 
         iframe {
-            width: 100%; /* Füllt die gesamte Breite */
+            width: 100%; /* Volle Breite */
             height: 60px; /* Höhe des Headers */
             border: none; /* Kein Rahmen */
             position: fixed; /* Fixiert am oberen Rand */
             top: 0;
             left: 0;
-            z-index: 1000; /* Höchste Priorität für Klickbarkeit */
+            z-index: 1000; /* Höhere Priorität für Klicks */
         }
 
         main {
@@ -28,13 +28,25 @@
     </style>
 </head>
 <body>
-    <!-- Fixiertes iframe für die Navigation -->
-    <iframe src="navigation.html"></iframe>
+    <!-- Navigation -->
+    <iframe src="navigation.html" id="navigation-frame"></iframe>
 
     <!-- Hauptinhalt -->
     <main>
         <h1>Willkommen</h1>
         <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
     </main>
+
+    <script>
+        // Überprüfe, ob der Burger-Button gedrückt wird und leite es weiter
+        document.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.getElementById('navigation-frame');
+            iframe.contentWindow.addEventListener('click', (event) => {
+                if (event.target.classList.contains('menu-toggle')) {
+                    iframe.contentWindow.toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
