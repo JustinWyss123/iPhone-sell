@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Wissenstipps</title>
+    <title>Navigation Menü</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,12 +12,12 @@
         }
 
         header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
         }
 
         .menu-toggle {
@@ -26,76 +26,101 @@
         }
 
         nav {
-            position: fixed;
-            top: 0;
-            left: -250px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #444;
             width: 250px;
             height: 100%;
-            background-color: #444;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
             overflow-y: auto;
-            transition: left 0.3s ease;
-            padding-top: 60px;
+        }
+
+        nav.open {
+            transform: translateX(0);
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
-            margin: 10px 0;
+            border-bottom: 1px solid #555;
         }
 
         nav ul li a {
-            color: #fff;
             text-decoration: none;
-            padding: 10px 20px;
+            color: #fff;
             display: block;
+            padding: 15px;
         }
 
         nav ul li a:hover {
             background-color: #555;
         }
 
-        .nav-open {
-            left: 0;
+        /* Dropdown Styles */
+        .dropdown {
+            display: none;
+            background-color: #555;
         }
 
-        .main-content {
-            padding: 20px;
+        .dropdown a {
+            padding-left: 30px;
+        }
+
+        .dropdown a:hover {
+            background-color: #666;
+        }
+
+        .has-submenu:hover .dropdown {
+            display: block;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <h1>iPhone Wissenstipps</h1>
-</header>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <h1>iPhone Tipps</h1>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="#">Navigation 1</a>
+                <ul class="dropdown">
+                    <li><a href="#">Hauptverzeichnis 1</a></li>
+                    <li><a href="#">Hauptverzeichnis 2</a></li>
+                    <li><a href="#">Hauptverzeichnis 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Navigation 2</a></li>
+            <li class="has-submenu">
+                <a href="#">Navigation 3</a>
+                <ul class="dropdown">
+                    <li><a href="#">Unterkategorie 1</a></li>
+                    <li><a href="#">Unterkategorie 2</a></li>
+                    <li><a href="#">Unterkategorie 3</a></li>
+                    <li><a href="#">Unterkategorie 4</a></li>
+                    <li><a href="#">Unterkategorie 5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Willkommen</h2>
+            <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
+        </section>
+    </main>
 
-<nav id="nav">
-    <ul>
-        <li><a href="seite1.html" target="_blank">Navigation 1</a></li>
-        <li><a href="seite2.html" target="_blank">Navigation 2</a></li>
-        <li><a href="seite3.html" target="_blank">Navigation 3</a></li>
-        <li><a href="seite4.html" target="_blank">Navigation 4</a></li>
-    </ul>
-</nav>
-
-<div class="main-content">
-    <h2>Willkommen zu den Wissenstipps für iPhones!</h2>
-    <p>Hier finden Sie nützliche Tipps und Tricks zur Verwendung Ihres iPhones:</p>
-    <ul>
-        <li>Wie man den Akkuverbrauch reduziert.</li>
-        <li>Effizientes Arbeiten mit Widgets.</li>
-        <li>Tipps für die iPhone-Kamera.</li>
-    </ul>
-</div>
-
-<script>
-    function toggleMenu() {
-        const nav = document.getElementById('nav');
-        nav.classList.toggle('nav-open');
-    }
-</script>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
