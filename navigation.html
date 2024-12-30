@@ -15,7 +15,7 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 15px;
+            height: 100px; /* Erhöht die Höhe des Headers */
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -25,12 +25,13 @@
             left: 0;
             z-index: 1000;
             box-sizing: border-box;
+            padding: 0 15px; /* Platz für Inhalte innerhalb des Headers */
         }
 
         header .menu-title {
             flex-grow: 1;
             text-align: center;
-            font-size: 18px;
+            font-size: 24px; /* Größerer Text für bessere Sichtbarkeit */
         }
 
         .menu-toggle {
@@ -92,7 +93,7 @@
 
         /* Content offset */
         main {
-            margin-top: 60px; /* Platz für den fixierten Header */
+            margin-top: 100px; /* Platz für den größeren Header */
         }
     </style>
 </head>
