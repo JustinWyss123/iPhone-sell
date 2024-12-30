@@ -8,24 +8,32 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            display: flex;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        /* Für den Header und das Layout */
         iframe {
-            width: 250px;
-            height: 100vh;
-            border: none;
+            width: 100%; /* Breite über die gesamte Seite */
+            height: 60px; /* Höhe des Headers */
+            border: none; /* Kein Rahmen */
+            position: fixed; /* Fixiert am oberen Rand */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Liegt über allem */
         }
 
         main {
-            margin-left: 250px;
+            margin-top: 60px; /* Platz für den fixierten Header */
             padding: 20px;
-            width: 100%;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <iframe src="navigation.html"></iframe>
+
+    <!-- Hauptinhalt -->
     <main>
         <h1>Willkommen</h1>
         <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
