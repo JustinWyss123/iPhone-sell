@@ -19,7 +19,7 @@
             align-items: center; /* Zentrierung vertikal */
             justify-content: space-between; /* Platz zwischen den Elementen */
             padding: 0 20px; /* Innenabstand */
-            width: 100%; /* Volle Breite */
+            width: 100%;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Schatten */
         }
 
@@ -92,26 +92,10 @@
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <h1 class="header-title">iPhone Tipps</h1>
     </header>
-    <nav id="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="iPhone-Resell-Preise.html">iPhone Resell Preise</a></li>
-            <li class="has-submenu">
-                <a href="#">Navigation 3</a>
-                <ul class="dropdown">
-                    <li><a href="unterkategorie1.html">Unterkategorie 1</a></li>
-                    <li><a href="unterkategorie2.html">Unterkategorie 2</a></li>
-                    <li><a href="unterkategorie3.html">Unterkategorie 3</a></li>
-                    <li><a href="unterkategorie4.html">Unterkategorie 4</a></li>
-                    <li><a href="unterkategorie5.html">Unterkategorie 5</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
     <script>
         function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
+            // Nachricht an die Hauptseite senden, dass der Button gedrückt wurde
+            window.parent.postMessage('toggleSidebar', '*');
         }
     </script>
 </body>
