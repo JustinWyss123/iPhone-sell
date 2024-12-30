@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Resell Preise</title>
     <style>
+        /* Grundlegendes Layout */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Header */
         header {
             background-color: #333;
             color: #fff;
             height: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 0 20px;
             width: 100%;
             position: fixed;
@@ -29,6 +33,8 @@
         .menu-toggle {
             font-size: 24px;
             cursor: pointer;
+            position: absolute;
+            left: 20px;
         }
 
         .header-title {
@@ -36,21 +42,20 @@
             margin: 0;
         }
 
+        /* Sidebar */
         #sidebar {
-            position: fixed;
-            top: 50px; /* Direkt unter dem Header */
-            left: 0;
             background-color: #444;
             width: 250px;
-            height: 100%;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 999;
+            height: 100vh;
+            position: fixed;
+            top: 50px; /* Direkt unter dem Header */
+            left: -250px;
+            transition: left 0.3s ease;
             overflow-y: auto;
         }
 
         #sidebar.open {
-            transform: translateX(0);
+            left: 0;
         }
 
         #sidebar ul {
@@ -86,9 +91,16 @@
             padding-left: 30px;
         }
 
+        /* Hauptinhalt */
         main {
-            margin-top: 50px; /* Platz für den fixierten Header */
+            margin-top: 50px; /* Platz für den Header */
             padding: 20px;
+            flex-grow: 1;
+            transition: margin-left 0.3s ease;
+        }
+
+        main.shifted {
+            margin-left: 250px; /* Platz für die geöffnete Sidebar */
         }
 
         table {
@@ -135,7 +147,7 @@
     </nav>
 
     <!-- Hauptinhalt -->
-    <main>
+    <main id="main-content">
         <h1>iPhone Resell Preise</h1>
         <table>
             <thead>
@@ -172,7 +184,13 @@
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
+            const mainContent = document.getElementById('main-content');
+            const isOpen = sidebar.classList.toggle('open');
+            if (isOpen) {
+                mainContent.classList.add('shifted');
+            } else {
+                mainContent.classList.remove('shifted');
+            }
         }
 
         function toggleDropdown(event) {
