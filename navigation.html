@@ -38,8 +38,8 @@
             top: 60px; /* Direkt unter dem Header */
             left: 0;
             background-color: #444;
-            width: 250px;
-            height: 100%;
+            width: 250px; /* Breite der Sidebar */
+            height: 100%; /* Höhe der Sidebar */
             transform: translateX(-100%);
             transition: transform 0.3s ease;
             overflow-y: auto;
@@ -111,7 +111,7 @@
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
+            sidebar.classList.toggle('open'); /* Öffnet/Schließt die Sidebar */
         }
     </script>
 </body>
