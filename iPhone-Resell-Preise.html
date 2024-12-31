@@ -9,8 +9,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
         }
 
         header {
@@ -40,134 +38,67 @@
             margin: 0;
         }
 
-        #sidebar {
-            background-color: #444;
-            width: 250px;
-            height: 100vh;
-            position: fixed;
-            top: 50px; /* Direkt unter dem Header */
-            left: -250px;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-        }
-
-        #sidebar.open {
-            left: 0;
-        }
-
-        #sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #sidebar ul li {
-            border-bottom: 1px solid #555;
-        }
-
-        #sidebar ul li a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-            padding: 15px;
-        }
-
-        #sidebar ul li a:hover {
-            background-color: #555;
-        }
-
-        .dropdown {
-            display: none;
-        }
-
-        .dropdown.open {
-            display: block;
-        }
-
-        .dropdown a {
-            padding-left: 30px;
-        }
-
         main {
-            margin-top: 50px; /* Platz für den Header */
+            margin-top: 50px;
             padding: 20px;
-            flex-grow: 1;
-            transition: margin-left 0.3s ease;
         }
 
-        main.shifted {
-            margin-left: 250px; /* Platz für die geöffnete Sidebar */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        /* Responsive Design */
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        table td {
+            background-color: #f9f9f9;
+        }
+
+        table td:hover {
+            background-color: #f1f1f1;
+        }
+
         @media (max-width: 768px) {
-            #sidebar {
-                width: 200px; /* Schmalere Sidebar für Tablets */
-            }
-
-            main.shifted {
-                margin-left: 200px;
-            }
-
-            .header-title {
-                font-size: 16px; /* Kleinere Schriftgröße */
-            }
-
-            .menu-toggle {
-                font-size: 20px;
+            table {
+                font-size: 14px;
             }
         }
 
         @media (max-width: 480px) {
-            #sidebar {
-                width: 180px; /* Noch schmalere Sidebar für Smartphones */
-            }
-
-            main.shifted {
-                margin-left: 180px;
-            }
-
-            .header-title {
-                font-size: 14px; /* Noch kleinere Schriftgröße */
-            }
-
-            .menu-toggle {
-                font-size: 18px;
-            }
-
-            main {
-                padding: 10px; /* Weniger Innenabstand für kleine Bildschirme */
+            table {
+                font-size: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <h1 class="header-title">iPhone Resell Preise</h1>
     </header>
 
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="iPhone-Resell-Preise.html">iPhone Resell Preise</a></li>
-            <li class="has-submenu">
-                <a href="#" onclick="toggleDropdown(event)">Navigation 3</a>
-                <ul class="dropdown" id="dropdown-menu">
-                    <li><a href="unterkategorie1.html">Unterkategorie 1</a></li>
-                    <li><a href="unterkategorie2.html">Unterkategorie 2</a></li>
-                    <li><a href="unterkategorie3.html">Unterkategorie 3</a></li>
-                    <li><a href="unterkategorie4.html">Unterkategorie 4</a></li>
-                    <li><a href="unterkategorie5.html">Unterkategorie 5</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <main>
+        <h1>iPhone Resell Preise</h1>
 
-    <!-- Hauptinhalt -->
-    <main id="main-content">
+
+
+ <main id="main-content">
         <h1>iPhone Resell Preise</h1>
          <!-- iPhone 13 -->
         <h2>iPhone 13</h2>
@@ -288,6 +219,7 @@
                 <tr><td>1 TB</td><td>Display, Backcover und sonstiger Defekt</td><td>700 €</td><td>950 €</td></tr>
             </tbody>
         </table>
+        
     </main>
 
     <script>
@@ -300,12 +232,6 @@
             } else {
                 mainContent.classList.remove('shifted');
             }
-        }
-
-        function toggleDropdown(event) {
-            event.preventDefault(); // Verhindert das Standardverhalten des Links
-            const dropdown = document.getElementById('dropdown-menu');
-            dropdown.classList.toggle('open');
         }
     </script>
 </body>
