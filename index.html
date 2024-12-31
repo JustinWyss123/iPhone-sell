@@ -169,8 +169,14 @@
     <!-- Hauptinhalt -->
         <!-- Hauptinhalt -->
     <main id="main-content">
-        <h1>Willkommen</h1>
-        <p>Hier finden Sie Wissenstipps für Ihr iPhone.</p>
+           <!-- Hauptinhalt -->
+    <main id="main-content">
+        <!-- Header-Bereich mit Bild -->
+        <section style="text-align: center; margin-top: 50px;">
+            <img src="https://via.placeholder.com/800x400?text=iPhone+Tipps" 
+                 alt="iPhone Tipps" 
+                 style="width: 80%; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        </section>
 
         <!-- iPhone News Section -->
         <section style="margin-top: 30px;">
@@ -226,21 +232,6 @@
         </section>
     </main>
 
-    <script>
-        const tips = [
-            "Tippen Sie zweimal auf die Rückseite, um Screenshots zu erstellen!",
-            "Halten Sie die Leertaste auf der Tastatur gedrückt, um den Cursor einfacher zu bewegen.",
-            "Nutzen Sie die Fokus-Modi, um störende Benachrichtigungen während der Arbeit oder beim Schlafen auszublenden.",
-            "Wischen Sie in Safari von der Seite, um zu Ihrem zuletzt geschlossenen Tab zurückzukehren.",
-            "Verwenden Sie AirDrop, um Dateien superschnell zwischen Apple-Geräten zu übertragen!"
-        ];
-
-        function showTip() {
-            const randomIndex = Math.floor(Math.random() * tips.length);
-            const tipDisplay = document.getElementById("tip-display");
-            tipDisplay.textContent = tips[randomIndex];
-        }
-    </script>
 
 
     <script>
