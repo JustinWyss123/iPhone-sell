@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unterkategorie 1</title>
     <style>
+        /* Gleiche Styles wie Unterkategorie 1 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -45,7 +46,7 @@
             width: 250px;
             height: 100vh;
             position: fixed;
-            top: 50px; /* Direkt unter dem Header */
+            top: 50px;
             left: -250px;
             transition: left 0.3s ease;
             overflow-y: auto;
@@ -89,20 +90,20 @@
         }
 
         main {
-            margin-top: 50px; /* Platz für den Header */
+            margin-top: 50px;
             padding: 20px;
             flex-grow: 1;
             transition: margin-left 0.3s ease;
         }
 
         main.shifted {
-            margin-left: 250px; /* Platz für die geöffnete Sidebar */
+            margin-left: 250px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             #sidebar {
-                width: 200px; /* Schmalere Sidebar für Tablets */
+                width: 200px;
             }
 
             main.shifted {
@@ -110,7 +111,7 @@
             }
 
             .header-title {
-                font-size: 16px; /* Kleinere Schriftgröße */
+                font-size: 16px;
             }
 
             .menu-toggle {
@@ -120,7 +121,7 @@
 
         @media (max-width: 480px) {
             #sidebar {
-                width: 180px; /* Noch schmalere Sidebar für Smartphones */
+                width: 180px;
             }
 
             main.shifted {
@@ -128,7 +129,7 @@
             }
 
             .header-title {
-                font-size: 14px; /* Noch kleinere Schriftgröße */
+                font-size: 14px;
             }
 
             .menu-toggle {
@@ -136,7 +137,7 @@
             }
 
             main {
-                padding: 10px; /* Weniger Innenabstand für kleine Bildschirme */
+                padding: 10px;
             }
         }
     </style>
@@ -185,7 +186,7 @@
         }
 
         function toggleDropdown(event) {
-            event.preventDefault(); // Verhindert das Standardverhalten des Links
+            event.preventDefault();
             const dropdown = document.getElementById('dropdown-menu');
             dropdown.classList.toggle('open');
         }
