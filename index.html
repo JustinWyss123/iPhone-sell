@@ -243,6 +243,20 @@
         </section>
     </main>
 
+    <script>
+        const tips = [
+            "Tippen Sie zweimal auf die Rückseite, um Screenshots zu erstellen!",
+            "Halten Sie die Leertaste auf der Tastatur gedrückt, um den Cursor einfacher zu bewegen.",
+            "Nutzen Sie die Fokus-Modi, um störende Benachrichtigungen auszublenden.",
+            "Wischen Sie in Safari von der Seite, um zu Ihrem zuletzt geschlossenen Tab zurückzukehren.",
+            "Verwenden Sie AirDrop, um Dateien superschnell zwischen Apple-Geräten zu übertragen!"
+        ];
+
+        function showTip() {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            const tipDisplay = document.getElementById("tip-display");
+            tipDisplay.textContent = tips[randomIndex];
+        }
 
 
 
